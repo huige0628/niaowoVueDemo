@@ -1,0 +1,121 @@
+[
+    {
+      "id": 1,
+      "title": "系统管理",
+      "children": [
+        {
+          "id": 10,
+          "title": "系统设置",
+          "icon": "el-icon-menu",
+          "children": [
+            {
+              "id": 101,
+              "rootId": 1,
+              "title": "国家",
+              "path": "/country"
+            },
+            {
+              "id": 102,
+              "rootId": 1,
+              "title": "币种",
+              "path": "/currency"
+            },
+            {
+              "id": 103,
+              "rootId": 1,
+              "title": "汇率",
+              "path": "/exchangerate"
+            },
+            {
+              "id": 104,
+              "rootId": 1,
+              "title": "店铺",
+              "path": "/shop"
+            }
+          ]
+        },
+        {
+          "id": 11,
+          "title": "组织架构",
+          "icon": "el-icon-share",
+          "children": [
+            {
+              "id": 111,
+              "rootId": 1,
+              "title": "用户管理",
+              "path": "/user"
+            },
+            {
+              "id": 112,
+              "rootId": 1,
+              "title": "角色管理",
+              "path": "/role"
+            },
+            {
+              "id": 113,
+              "rootId": 1,
+              "title": "部门管理",
+              "path": "/org"
+            },
+            {
+              "id": 114,
+              "rootId": 1,
+              "title": "模块管理",
+              "path": "/module"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "新闻管理",
+      "children": [
+        {
+          "id": 20,
+          "title": "基础信息",
+          "icon": "el-icon-menu",
+          "children": [
+            {
+              "id": 201,
+              "rootId": 2,
+              "title": "栏目管理",
+              "path": "/category"
+            },
+            {
+              "id": 202,
+              "rootId": 2,
+              "title": "新闻管理",
+              "path": "/news"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "招聘管理",
+      "children": [
+        {
+          "id": 30,
+          "title": "基础信息",
+          "icon": "el-icon-menu",
+          "children": [
+            {
+              "id": 301,
+              "rootId": 3,
+              "title": "职位类别",
+              "path": "/job/jobtype"
+            },
+            {
+              "id": 302,
+              "rootId": 3,
+              "title": "招聘列表",
+              "path": "/job/joblist"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+  

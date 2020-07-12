@@ -14,10 +14,10 @@
       </template>
       <!-- 默认搜索项 -->
       <el-form-item>
-        <el-input v-model="filter.name" placeholder="国家名称" clearable></el-input>
+        <el-input v-model="filter.name" placeholder="货币名称" clearable></el-input>
       </el-form-item>
       <el-form-item>
-        <el-input v-model="filter.code" placeholder="国家简码" clearable></el-input>
+        <el-input v-model="filter.code" placeholder="国际代码" clearable></el-input>
       </el-form-item>
       <template slot="more">
         <!-- 更多搜索项 -->
@@ -26,14 +26,8 @@
     <!-- table -->
     <SimpleTable ref="table" :url="tableUrl" :filter="filter" :offset="10" :autoLoad="false">
       <el-table-column type="selection" width="40" fixed="left" />
-      <el-table-column prop="continent" label="大洲" width="100"></el-table-column>
-      <el-table-column prop="enName" label="英文名称"></el-table-column>
-      <el-table-column prop="cnName" label="简体中文"></el-table-column>
-      <el-table-column prop="twName" label="繁体中文"></el-table-column>
-      <el-table-column prop="twoCode" label="二字码"></el-table-column>
-      <el-table-column prop="threeCode" label="三字码"></el-table-column>
-      <el-table-column prop="otherCode" label="其它简码"></el-table-column>
-      <el-table-column prop="remark" label="备注"></el-table-column>
+      <el-table-column prop="currencyCode" label="国际代码"></el-table-column>
+      <el-table-column prop="currencyName" label="货币名称"></el-table-column>
       <el-table-column prop="operate" label="操作" width="120">
         <template slot-scope="scope">
           <el-button-group>
@@ -65,7 +59,7 @@
 <script>
 //import { getList, remove } from "@/api/sys/role";
 export default {
-  name: "Country",
+  name: "Currency",
   components: {
     SimpleHead: () => import("@/components/common/SimpleHead"), //头部组件
     SimpleTable: () => import("@/components/common/SimpleTable"), //表格组件
