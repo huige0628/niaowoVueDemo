@@ -12,9 +12,11 @@ export default new Router({
     {
       path: '/',
       name: 'HelloWorld',
-      component: LayoutIndex
-    },
-    ...scm,
-    ...baseinfo
+      component: LayoutIndex,
+      children: [
+        ...scm,
+        ...baseinfo
+      ]
+    }
   ]
 })

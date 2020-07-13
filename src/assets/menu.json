@@ -29,6 +29,18 @@
             {
               "id": 104,
               "rootId": 1,
+              "title": "销售平台",
+              "path": "/platform"
+            },
+            {
+              "id": 105,
+              "rootId": 1,
+              "title": "销售平台站点",
+              "path": "/platformsite"
+            },
+            {
+              "id": 106,
+              "rootId": 1,
               "title": "店铺",
               "path": "/shop"
             }

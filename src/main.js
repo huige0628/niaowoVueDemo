@@ -5,7 +5,7 @@ import App from './App'
 import router from './router'
 import store from './store'
 
-
+//ElementUI
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
 
@@ -14,8 +14,10 @@ Vue.use(ElementUI, {
   zIndex: 999
 })
 
-Vue.config.productionTip = false
+//Mock
+require("./mock/index.js")
 
+Vue.config.productionTip = false
 
 /* eslint-disable no-new */
 new Vue({

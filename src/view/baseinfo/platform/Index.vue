@@ -14,10 +14,7 @@
       </template>
       <!-- 默认搜索项 -->
       <el-form-item>
-        <el-input v-model="filter.name" placeholder="货币名称" clearable></el-input>
-      </el-form-item>
-      <el-form-item>
-        <el-input v-model="filter.code" placeholder="国际代码" clearable></el-input>
+        <el-input v-model="filter.name" placeholder="平台名称" clearable></el-input>
       </el-form-item>
       <template slot="more">
         <!-- 更多搜索项 -->
@@ -26,8 +23,18 @@
     <!-- table -->
     <SimpleTable ref="table" :url="tableUrl" :filter="filter" :offset="10" >
       <el-table-column type="selection" width="40" fixed="left" />
-      <el-table-column prop="currencyCode" label="国际代码"></el-table-column>
-      <el-table-column prop="currencyName" label="货币名称"></el-table-column>
+      <el-table-column prop="platformId" label="ID" width="80"></el-table-column>
+      <el-table-column prop="platformNameEn" label="平台英文名称"></el-table-column>
+      <el-table-column prop="platformNameCn" label="平台中文名称"></el-table-column>
+      <el-table-column prop="remark" label="备注"></el-table-column>
+      <el-table-column prop="status" label="状态" width="120">
+        <template slot-scope="scope">
+          <el-tag
+            :type="scope.row.status  ? 'success' : 'danger'"
+            disable-transitions
+          >{{scope.row.status?'启用':'禁用'}}</el-tag>
+        </template>
+      </el-table-column>
       <el-table-column prop="operate" label="操作" width="120">
         <template slot-scope="scope">
           <el-button-group>
@@ -57,9 +64,9 @@
 </template>
 
 <script>
-import { getList } from "@/api/baseinfo/currency";
+import { getList } from "@/api/baseinfo/platform";
 export default {
-  name: "Currency",
+  name: "Platform",
   components: {
     SimpleHead: () => import("@/components/common/SimpleHead"), //头部组件
     SimpleTable: () => import("@/components/common/SimpleTable"), //表格组件
@@ -70,8 +77,7 @@ export default {
       tableUrl: getList.url,
       // 过滤项
       filter: {
-        name: null,
-        code: null
+        name: null
       }
     };
   },
