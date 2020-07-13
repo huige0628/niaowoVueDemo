@@ -35,7 +35,7 @@
           >{{scope.row.status?'启用':'禁用'}}</el-tag>
         </template>
       </el-table-column>
-      <el-table-column prop="operate" label="操作" width="120">
+      <el-table-column prop="operate" label="操作" width="80">
         <template slot-scope="scope">
           <el-button-group>
             <el-button

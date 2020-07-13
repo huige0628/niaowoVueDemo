@@ -13,3 +13,16 @@ export const getList = {
         })
     }
 }
+
+
+//获取站点列表
+export const getSiteList = {
+    url: `${apiHost}/api/PlatformSite/GetList`, //接口地址
+    request(data) {
+        return httpRequest({
+            url: this.url,
+            method: 'post',
+            data: data
+        })
+    }
+}

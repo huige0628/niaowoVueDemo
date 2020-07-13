@@ -54,5 +54,8 @@ export default {
   }
 };
 </script>
-<style scoped>
+<style>
+.el-scrollbar__wrap {
+    overflow-x: hidden;
+}
 </style>

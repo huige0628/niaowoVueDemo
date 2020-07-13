@@ -33,7 +33,7 @@
       <el-table-column prop="enabled" label="是否启用"></el-table-column>
       <el-table-column prop="tokenExpire" label="授权过期时间"></el-table-column>
       <el-table-column prop="managerUserName" label="负责人"></el-table-column>
-      <el-table-column prop="operate" label="操作" width="120">
+      <el-table-column prop="operate" label="操作" width="80">
         <template slot-scope="scope">
           <el-button-group>
             <el-button

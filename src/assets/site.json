@@ -1,0 +1,44 @@
+[
+    {
+        "value": "Australia",
+        "siteNameEn": "Australia",
+        "siteNameCn": "澳大利亚",
+        "siteCode": "AU",
+        "currency": "AUD"
+    },
+    {
+        "value": "Canada",
+        "siteNameEn": "Canada",
+        "siteNameCn": "加拿大",
+        "siteCode": "CA",
+        "currency": "CAD"
+    },
+    {
+        "value": "US",
+        "siteNameEn": "US",
+        "siteNameCn": "美国",
+        "siteCode": "US",
+        "currency": "USD"
+    },
+    {
+        "value": "UK",
+        "siteNameEn": "UK",
+        "siteNameCn": "英国",
+        "siteCode": "GB",
+        "currency": "GBP"
+    },
+    {
+        "value": "France",
+        "siteNameEn": "France",
+        "siteNameCn": "法国",
+        "siteCode": "FK",
+        "currency": "EUR"
+    },
+    {
+        "value": "Germany",
+        "siteNameEn": "Germany",
+        "siteNameCn": "德国",
+        "siteCode": "DE",
+        "currency": "EUR"
+    }
+]

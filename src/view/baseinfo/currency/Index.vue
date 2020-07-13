@@ -28,7 +28,7 @@
       <el-table-column type="selection" width="40" fixed="left" />
       <el-table-column prop="currencyCode" label="国际代码"></el-table-column>
       <el-table-column prop="currencyName" label="货币名称"></el-table-column>
-      <el-table-column prop="operate" label="操作" width="120">
+      <el-table-column prop="operate" label="操作" width="80">
         <template slot-scope="scope">
           <el-button-group>
             <el-button
