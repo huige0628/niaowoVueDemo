@@ -41,8 +41,14 @@
             {
               "id": 106,
               "rootId": 1,
-              "title": "店铺",
+              "title": "店铺管理",
               "path": "/shop"
+            },
+            {
+              "id": 107,
+              "rootId": 1,
+              "title": "字典分类",
+              "path": "/dictionary"
             }
           ]
         },
@@ -81,7 +87,7 @@
     },
     {
       "id": 2,
-      "title": "新闻管理",
+      "title": "产品中心",
       "children": [
         {
           "id": 20,
@@ -91,13 +97,44 @@
             {
               "id": 201,
               "rootId": 2,
-              "title": "栏目管理",
-              "path": "/category"
+              "title": "品牌管理",
+              "path": "/brand"
             },
             {
               "id": 202,
               "rootId": 2,
               "title": "新闻管理",
+              "path": "/news"
+            }
+          ]
+        },
+        {
+          "id": 21,
+          "title": "产品管理",
+          "icon": "el-icon-menu",
+          "children": [
+            {
+              "id": 211,
+              "rootId": 2,
+              "title": "产品信息",
+              "path": "/brand"
+            },
+            {
+              "id": 212,
+              "rootId": 2,
+              "title": "产品属性",
+              "path": "/news"
+            },
+            {
+              "id": 213,
+              "rootId": 2,
+              "title": "产品组管理",
+              "path": "/news"
+            },
+            {
+              "id": 214,
+              "rootId": 2,
+              "title": "产品标签管理",
               "path": "/news"
             }
           ]

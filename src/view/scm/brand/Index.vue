@@ -14,25 +14,30 @@
       </template>
       <!-- 默认搜索项 -->
       <el-form-item>
-        <el-input v-model="filter.name" placeholder="货币名称" clearable></el-input>
-      </el-form-item>
-      <el-form-item>
-        <el-input v-model="filter.code" placeholder="国际代码" clearable></el-input>
+        <el-input v-model="filter.name" placeholder="品牌名称" clearable></el-input>
       </el-form-item>
       <template slot="more">
         <!-- 更多搜索项 -->
       </template>
     </SimpleHead>
     <!-- table -->
-    <SimpleTable ref="table" :url="tableUrl" :filter="filter" :offset="10" :autoLoad="false">
+    <SimpleTable ref="table" :url="tableUrl" :filter="filter" :offset="10">
       <el-table-column type="selection" width="40" fixed="left" />
-      <el-table-column prop="platformName" label="平台"></el-table-column>
-      <el-table-column prop="shopName" label="店铺"></el-table-column>
-      <el-table-column prop="site" label="站点"></el-table-column>
-      <el-table-column prop="authStatus" label="授权状态"></el-table-column>
-      <el-table-column prop="enabled" label="是否启用"></el-table-column>
-      <el-table-column prop="tokenExpire" label="授权过期时间"></el-table-column>
-      <el-table-column prop="managerUserName" label="负责人"></el-table-column>
+      <el-table-column prop="logo" label="LOGO" width="80">
+        <template slot-scope="scope">
+          <el-image :src="scope.row.logoUrl" style="width: 70px; height: 70px" />
+        </template>
+      </el-table-column>
+      <el-table-column prop="brandNameEn" label="品牌英文名称" width="120"></el-table-column>
+      <el-table-column prop="brandNameCn" label="品牌中文名称" width="120"></el-table-column>
+      <el-table-column prop="brandType" label="品牌类型"></el-table-column>
+      <el-table-column prop="platformName" label="所属平台"></el-table-column>
+      <el-table-column prop="platformUrl" label="平台链接"></el-table-column>
+      <el-table-column prop="remark" label="描述"></el-table-column>
+      <el-table-column prop="createDate" label="创建时间" width="140"></el-table-column>
+      <el-table-column prop="createUserName" label="创建人" width="80"></el-table-column>
+      <el-table-column prop="modifyDate" label="编辑时间" width="140"></el-table-column>
+      <el-table-column prop="modifyUserName" label="编辑人" width="80"></el-table-column>
       <el-table-column prop="operate" label="操作" width="80">
         <template slot-scope="scope">
           <el-button-group>
@@ -62,21 +67,20 @@
 </template>
 
 <script>
-//import { getList, remove } from "@/api/sys/role";
+import { getList } from "@/api/scm/brand";
 export default {
-  name: "Shop",
+  name: "Brand",
   components: {
     SimpleHead: () => import("@/components/common/SimpleHead"), //头部组件
     SimpleTable: () => import("@/components/common/SimpleTable"), //表格组件
-    AddEdit: () => import("./AddEdit"), // 添加编辑
+    AddEdit: () => import("./AddEdit") // 添加编辑
   },
   data() {
     return {
-      tableUrl: '#',
+      tableUrl: getList.url,
       // 过滤项
       filter: {
-        name: null,
-        code: null
+        name: null
       }
     };
   },
@@ -91,19 +95,15 @@ export default {
       this.$refs.edit.open();
     },
     edit(row) {
-      
       this.$refs.edit.open(row);
     },
     remove(row) {
-      
       this.$confirm("确定要删除吗？", "删除", {
         distinguishCancelAndClose: true,
         confirmButtonText: "确定",
         cancelButtonText: "取消"
       })
-        .then(() => {
-          
-        })
+        .then(() => {})
         .catch(action => {});
     }
   }

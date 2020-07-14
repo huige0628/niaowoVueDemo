@@ -9,15 +9,15 @@
     :disabled="disabled"
     transfer
   >
-    <template v-for="item in platformList">
-      <el-option :value="item.platformId" :label="item.platformNameEn" :key="item.platformId"></el-option>
+    <template v-for="item in countryList">
+      <el-option :value="item.countryId" :label="item.countryName" :key="item.countryId"></el-option>
     </template>
   </el-select>
 </template>
 <script>
 //import { getPlatformList } from "@/api/sys/common/platform";
 /**
- * 销售平台选择组件
+ * 币种选择组件
  */
 export default {
   model: {
@@ -39,36 +39,38 @@ export default {
     },
     placeholder: {
       type: String,
-      default: "平台"
+      default: "币种"
     }
   },
   data() {
     return {
-      platformList: [] //列表
+      countryList: [] //列表
     };
   },
   methods: {
-    //加载平台
-    loadPlatform() {
+    loadcountry() {
       //getPlatformList.request().then(res => (this.platformList = res.data));
-      this.platformList = [
-        { platformId: 1, platformNameEn: "Ebay" },
-        { platformId: 2, platformNameEn: "AliExpress" },
-        { platformId: 3, platformNameEn: "Wish" },
-        { platformId: 4, platformNameEn: "Lazada" },
-        { platformId: 5, platformNameEn: "Shopee" },
-        { platformId: 6, platformNameEn: "Amazon" }
+      this.countryList = [
+        { countryId: 1, countryName: "中国" },
+        { countryId: 2, countryName: "美国" },
+        { countryId: 3, countryName: "英国" },
+        { countryId: 4, countryName: "法国" },
+        { countryId: 5, countryName: "德国" },
+        { countryId: 6, countryName: "西班牙" },
+        { countryId: 7, countryName: "意大利" },
+        { countryId: 8, countryName: "日本" },
+        { countryId: 9, countryName: "韩国" }
       ];
     },
     change(value) {
       this.$emit("change", value);
     },
     find(key) {
-      return this.platformList.find(e => e.platformId == key);
+      return this.countryList.find(e => e.countryId == key);
     }
   },
   mounted: function() {
-    this.loadPlatform();
+    this.loadcountry();
   }
 };
 </script>

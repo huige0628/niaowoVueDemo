@@ -46,7 +46,6 @@ export default {
     }
   },
   beforeRouteEnter(to, from, next) {
-    console.log("我从哪里来", to.params.id, from);
     var self = this;
     next(vm => {
       vm.isId = to.params.id;
@@ -56,6 +55,6 @@ export default {
 </script>
 <style>
 .el-scrollbar__wrap {
-    overflow-x: hidden;
+  overflow-x: hidden;
 }
 </style>

@@ -17,6 +17,7 @@
                 v-model="formData.platformId"
                 @change="platformChange"
                 placeholder="销售平台"
+                style="width:100%"
               ></PlatformSelect>
             </el-form-item>
           </el-col>
@@ -69,9 +70,9 @@
             </el-form-item>
           </el-col>
           <el-col :span="12">
-            <!-- <el-form-item label="平台编码" prop="platformCode">
-              <el-input v-model="formData.platformCode" placeholder="请输入平台编码" clearable />
-            </el-form-item>-->
+            <el-form-item label="Api地址" prop="apiUrl" v-if="formData.platformId===4">
+              <el-input v-model="formData.apiUrl" placeholder="请输入Api地址" clearable />
+            </el-form-item>
           </el-col>
         </el-row>
       </el-form>
@@ -90,7 +91,7 @@ import sites from "@/assets/site.json";
  */
 export default {
   components: {
-    PlatformSelect: () => import("@/components/common/PlatformSelect") //头部组件
+    PlatformSelect: () => import("@/components/common/PlatformSelect") //销售平台组件
   },
   data() {
     return {
@@ -106,7 +107,8 @@ export default {
         status: true,
         platformCode: null,
         siteCode: null,
-        currency: null
+        currency: null,
+        apiUrl: null
       },
       formRules: {
         siteNameCn: [
@@ -193,6 +195,7 @@ export default {
           this.formData.siteCode = row.siteCode;
           this.formData.platformCode = row.platformCode;
           this.formData.currency = row.currency;
+          this.formData.apiUrl = row.apiUrl;
         }
       });
     }
@@ -202,13 +205,10 @@ export default {
   },
   computed: {
     title() {
-      return this.formData.userId ? "编辑" : "添加";
+      return this.formData.platformSiteId ? "编辑" : "添加";
     }
   }
 };
 </script>
-<style>
-.form-editor {
-  padding-right: 5px;
-}
+<style scoped>
 </style>

@@ -9,15 +9,15 @@
     :disabled="disabled"
     transfer
   >
-    <template v-for="item in platformList">
-      <el-option :value="item.platformId" :label="item.platformNameEn" :key="item.platformId"></el-option>
+    <template v-for="item in currencyList">
+      <el-option :value="item.currencyId" :label="item.currencyCode" :key="item.currencyId"></el-option>
     </template>
   </el-select>
 </template>
 <script>
 //import { getPlatformList } from "@/api/sys/common/platform";
 /**
- * 销售平台选择组件
+ * 币种选择组件
  */
 export default {
   model: {
@@ -39,36 +39,38 @@ export default {
     },
     placeholder: {
       type: String,
-      default: "平台"
+      default: "币种"
     }
   },
   data() {
     return {
-      platformList: [] //列表
+      currencyList: [] //列表
     };
   },
   methods: {
-    //加载平台
-    loadPlatform() {
+    loadCurrency() {
       //getPlatformList.request().then(res => (this.platformList = res.data));
-      this.platformList = [
-        { platformId: 1, platformNameEn: "Ebay" },
-        { platformId: 2, platformNameEn: "AliExpress" },
-        { platformId: 3, platformNameEn: "Wish" },
-        { platformId: 4, platformNameEn: "Lazada" },
-        { platformId: 5, platformNameEn: "Shopee" },
-        { platformId: 6, platformNameEn: "Amazon" }
+      this.currencyList = [
+        { currencyId: 1, currencyCode: "USD" },
+        { currencyId: 2, currencyCode: "CNY" },
+        { currencyId: 3, currencyCode: "EUR" },
+        { currencyId: 4, currencyCode: "GBP" },
+        { currencyId: 5, currencyCode: "AUD" },
+        { currencyId: 6, currencyCode: "CAD" },
+        { currencyId: 7, currencyCode: "MYR" },
+        { currencyId: 8, currencyCode: "SGD" },
+        { currencyId: 9, currencyCode: "IDR" }
       ];
     },
     change(value) {
       this.$emit("change", value);
     },
     find(key) {
-      return this.platformList.find(e => e.platformId == key);
+      return this.currencyList.find(e => e.currencyId == key);
     }
   },
   mounted: function() {
-    this.loadPlatform();
+    this.loadCurrency();
   }
 };
 </script>

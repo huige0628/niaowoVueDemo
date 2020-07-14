@@ -162,13 +162,10 @@ export default {
   mounted() {},
   computed: {
     title() {
-      return this.formData.userId ? "编辑" : "添加";
+      return this.formData.countryId ? "编辑" : "添加";
     }
   }
 };
 </script>
-<style>
-.form-editor {
-  padding-right: 5px;
-}
+<style scoped>
 </style>

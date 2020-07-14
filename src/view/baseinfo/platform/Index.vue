@@ -88,10 +88,6 @@ export default {
     onExpand() {
       this.$refs.table.resize();
     },
-    treeNodeClick(data) {
-      this.filter.orgId = data.id;
-      this.reloadTable();
-    },
     add() {
       this.$refs.edit.open();
     },

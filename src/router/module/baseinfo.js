@@ -28,5 +28,10 @@ export default[
         path: '/platformsite',
         name: 'PlatformSite',
         component: ()=>import("@/view/baseinfo/platformsite/Index")
+    },
+    {
+        path: '/dictionary',
+        name: 'Dictionary',
+        component: ()=>import("@/view/baseinfo/dictionary/Index")
     }
 ]

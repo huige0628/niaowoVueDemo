@@ -8,9 +8,7 @@ for (let i = 0; i < count; i++) {
         platformId: Mock.mock('@integer(1, 20)'),
         'platformNameCn|1': ['eBay', 'AliExpress', 'Lazada', 'Shopee', 'Wish', 'Amazon', 'Shopify'],
         'platformNameEn|1': ['eBay', 'AliExpress', 'Lazada', 'Shopee', 'Wish', 'Amazon', 'Shopify'],
-        status: Mock.mock({
-            "boolean|1-2": true
-        }),
+        status: Mock.Random.boolean(),
         remark: Mock.mock('@cparagraph(2)')
     }))
 }

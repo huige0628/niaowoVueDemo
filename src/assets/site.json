@@ -40,5 +40,75 @@
         "siteNameCn": "德国",
         "siteCode": "DE",
         "currency": "EUR"
+    },
+    {
+        "value": "Italy",
+        "siteNameEn": "Italy",
+        "siteNameCn": "意大利",
+        "siteCode": "IT",
+        "currency": "EUR"
+    },
+    {
+        "value": "Spain",
+        "siteNameEn": "Spain",
+        "siteNameCn": "西班牙",
+        "siteCode": "ES",
+        "currency": "EUR"
+    },
+    {
+        "value": "Malaysia",
+        "siteNameEn": "Malaysia",
+        "siteNameCn": "马来西亚",
+        "siteCode": "MY",
+        "currency": "MYR"
+    },
+    {
+        "value": "Indonesia",
+        "siteNameEn": "Indonesia",
+        "siteNameCn": "印度尼西亚",
+        "siteCode": "ID",
+        "currency": "IDR"
+    },
+    {
+        "value": "Thailand",
+        "siteNameEn": "Thailand",
+        "siteNameCn": "泰国",
+        "siteCode": "TH",
+        "currency": "THB"
+    },
+    {
+        "value": "Singapore",
+        "siteNameEn": "Singapore",
+        "siteNameCn": "新加坡",
+        "siteCode": "SG",
+        "currency": "SGD"
+    },
+    {
+        "value": "Philippines",
+        "siteNameEn": "Philippines",
+        "siteNameCn": "菲律宾",
+        "siteCode": "PH",
+        "currency": "PHP"
+    },
+    {
+        "value": "Vietnam",
+        "siteNameEn": "Vietnam",
+        "siteNameCn": "越南",
+        "siteCode": "VN",
+        "currency": "VND"
+    },
+    {
+        "value": "Taiwan",
+        "siteNameEn": "Taiwan",
+        "siteNameCn": "中国台湾",
+        "siteCode": "TW",
+        "currency": "TWD"
+    },
+    {
+        "value": "Brazil",
+        "siteNameEn": "Brazil",
+        "siteNameCn": "巴西",
+        "siteCode": "BR",
+        "currency": "BRL"
     }
 ]

@@ -1,20 +1,25 @@
 import Mock from 'mockjs'
 
-//参考：http://www.webmasterhome.cn/huilv/huobidaima.asp
-
 let dataList = [];
 const count = 45
 
 for (let i = 0; i < count; i++) {
     dataList.push(Mock.mock({
-        currencyId: Mock.Random.id(),
-        currencyName: Mock.Random.cname(),
-        'currencyCode|1': ['USD', 'EUR', 'CNY', 'HKD', 'SDG', 'VND', 'IDR', 'MYR', 'GBP', 'PHP']
+        brandId: Mock.Random.id(),
+        brandNameCn:Mock.mock('@cname'),
+        brandNameEn:Mock.mock('@word(3, 5)'),
+        brandType:Mock.mock('@word(3, 5)'),
+        'platformName|1': ['Wish', 'Ebay','Amazon', 'Lazada'],
+        platformUrl:Mock.mock('@url()'),
+        sortNo: Mock.mock('@integer(1, 10)'),
+        status: Mock.Random.boolean(),
+        createDate:Mock.mock('@datetime'),
+        createUserName:Mock.mock('@cname')
     }))
 }
 
 export default {
-    'post|/api/Currency/GetList': (option) => {
+    'post|/api/Brand/GetList': (option) => {
         console.log(JSON.parse(option.body));
         let params = JSON.parse(option.body)
         let limit=params.limit,page=params.page;

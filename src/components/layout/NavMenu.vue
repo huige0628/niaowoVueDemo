@@ -50,7 +50,7 @@ export default {
     }
   },
   mounted() {
-    console.log(this.navMenus);
+    //console.log(this.navMenus);
   }
 };
 </script>

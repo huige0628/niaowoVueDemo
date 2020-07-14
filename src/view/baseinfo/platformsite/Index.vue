@@ -13,7 +13,14 @@
         </el-form-item>
       </template>
       <!-- 默认搜索项 -->
-      <el-form-item>
+      <el-form-item prop="platformId">
+        <PlatformSelect
+          ref="platform"
+          v-model="filter.platformId"
+          placeholder="销售平台"
+        ></PlatformSelect>
+      </el-form-item>
+      <el-form-item prop="name">
         <el-input v-model="filter.name" placeholder="站点名称" clearable></el-input>
       </el-form-item>
       <template slot="more">
@@ -21,7 +28,7 @@
       </template>
     </SimpleHead>
     <!-- table -->
-    <SimpleTable ref="table" :url="tableUrl" :filter="filter" :offset="10" >
+    <SimpleTable ref="table" :url="tableUrl" :filter="filter" :offset="10">
       <el-table-column type="selection" width="40" fixed="left" />
       <el-table-column prop="siteId" label="ID" width="80"></el-table-column>
       <el-table-column prop="siteNameEn" label="英文名称"></el-table-column>
@@ -71,6 +78,7 @@ export default {
   components: {
     SimpleHead: () => import("@/components/common/SimpleHead"), //头部组件
     SimpleTable: () => import("@/components/common/SimpleTable"), //表格组件
+    PlatformSelect: () => import("@/components/common/PlatformSelect"), //销售平台组件
     AddEdit: () => import("./AddEdit") // 添加编辑
   },
   data() {
@@ -78,7 +86,8 @@ export default {
       tableUrl: getSiteList.url,
       // 过滤项
       filter: {
-        name: null
+        name: null,
+        platformId:null
       }
     };
   },
@@ -88,10 +97,6 @@ export default {
     },
     onExpand() {
       this.$refs.table.resize();
-    },
-    treeNodeClick(data) {
-      this.filter.orgId = data.id;
-      this.reloadTable();
     },
     add() {
       this.$refs.edit.open();
