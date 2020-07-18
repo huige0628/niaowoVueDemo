@@ -14,10 +14,7 @@
       </template>
       <!-- 默认搜索项 -->
       <el-form-item>
-        <el-input v-model="filter.supplierCode" placeholder="供应商编号" clearable></el-input>
-      </el-form-item>
-      <el-form-item>
-        <el-input v-model="filter.supplierName" placeholder="供应商名称" clearable></el-input>
+        <el-input v-model="filter.name" placeholder="品牌名称" clearable></el-input>
       </el-form-item>
       <template slot="more">
         <!-- 更多搜索项 -->
@@ -26,25 +23,12 @@
     <!-- table -->
     <SimpleTable ref="table" :url="tableUrl" :filter="filter" :offset="10">
       <el-table-column type="selection" width="40" fixed="left" />
-      <el-table-column prop="supplierCode" label="供应商编号" width="120"></el-table-column>
-      <el-table-column prop="supplierName" label="供应商名称" width="180"></el-table-column>
-      <el-table-column prop="creditCode" label="统一社会信用码"></el-table-column>
-      <el-table-column prop="categoryPath" label="类目"></el-table-column>
-      <el-table-column prop="supplierType" label="供应商性质" width="120"></el-table-column>
-      <el-table-column prop="location" label="地区" width="120"></el-table-column>
-      <el-table-column prop="productCount" label="合作产品" width="80">
-        <template slot-scope="scope">
-          <el-tag type="success" effect="plain">{{ scope.row.productCount }}</el-tag>
-        </template>
-      </el-table-column>
-      <el-table-column prop="status" label="状态" width="90">
-        <template slot-scope="scope">
-          <el-tag disable-transitions v-if="scope.row.status===0">草稿</el-tag>
-          <el-tag type="warning" disable-transitions v-if="scope.row.status===1">待审核</el-tag>
-          <el-tag type="success" disable-transitions v-if="scope.row.status===2">已审核</el-tag>
-          <el-tag type="danger" disable-transitions v-if="scope.row.status===3">审核失败</el-tag>
-        </template>
-      </el-table-column>
+      <el-table-column prop="tortId" label="ID" width="60"></el-table-column>
+      <el-table-column prop="keyword" label="关键词" width="120"></el-table-column>
+      <el-table-column prop="tortType" label="侵权类型"></el-table-column>
+      <el-table-column prop="tortPlatform" label="侵权平台"></el-table-column>
+      <el-table-column prop="fileUrl" label="证据文件"></el-table-column>
+      <el-table-column prop="remark" label="描述"></el-table-column>
       <el-table-column prop="createDate" label="创建时间" width="140"></el-table-column>
       <el-table-column prop="createUserName" label="创建人" width="80"></el-table-column>
       <el-table-column prop="modifyDate" label="编辑时间" width="140"></el-table-column>
@@ -78,9 +62,9 @@
 </template>
 
 <script>
-import { getList } from "@/api/scm/supplier";
+import { getList } from "@/api/scm/brand";
 export default {
-  name: "Supplier",
+  name: "KeywordTort",
   components: {
     SimpleHead: () => import("@/components/common/SimpleHead"), //头部组件
     SimpleTable: () => import("@/components/common/SimpleTable"), //表格组件
@@ -91,8 +75,7 @@ export default {
       tableUrl: getList.url,
       // 过滤项
       filter: {
-        supplierCode: null,
-        supplierName: null
+        name: null
       }
     };
   },

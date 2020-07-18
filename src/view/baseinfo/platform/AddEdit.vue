@@ -21,6 +21,9 @@
             <el-radio :label="false">禁用</el-radio>
           </el-radio-group>
         </el-form-item>
+         <el-form-item label="logo">
+          <ImageUpload :limit="1" :image="images"></ImageUpload>
+        </el-form-item>
         <el-form-item label="备注" prop="remark">
           <el-input
             v-model="formData.remark"
@@ -43,7 +46,9 @@
  * 用户添加编辑
  */
 export default {
-  components: {},
+  components: {
+    ImageUpload: () => import("@/components/common/ImageUpload") //图片上传
+  },
   data() {
     return {
       show: false,
@@ -68,7 +73,8 @@ export default {
           },
           { min: 2, max: 20, message: "长度为2-20个字符", trigger: "blur" }
         ]
-      }
+      },
+      images:[]
     };
   },
   methods: {

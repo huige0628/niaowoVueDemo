@@ -8,5 +8,15 @@ export default[
         path: '/brand',
         name: 'Brand',
         component: ()=>import("@/view/scm/brand/Index")
+    },
+    {
+        path: '/producttort',
+        name: 'ProductTort',
+        component: ()=>import("@/view/scm/tort/producttort/Index")
+    },
+    {
+        path: '/keywordtort',
+        name: 'KeywordTort',
+        component: ()=>import("@/view/scm/tort/keywordtort/Index")
     }
 ]

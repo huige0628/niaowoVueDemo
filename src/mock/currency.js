@@ -15,7 +15,6 @@ for (let i = 0; i < count; i++) {
 
 export default {
     'post|/api/Currency/GetList': (option) => {
-        console.log(JSON.parse(option.body));
         let params = JSON.parse(option.body)
         let limit=params.limit,page=params.page;
         const pageList = dataList.filter((item, index) => index < limit * page && index >= limit * (page - 1))

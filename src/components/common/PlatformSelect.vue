@@ -8,6 +8,7 @@
     :multiple="multiple"
     :disabled="disabled"
     transfer
+    collapse-tags
   >
     <template v-for="item in platformList">
       <el-option :value="item.platformId" :label="item.platformNameEn" :key="item.platformId"></el-option>

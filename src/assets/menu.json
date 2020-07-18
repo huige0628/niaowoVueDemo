@@ -138,6 +138,33 @@
               "path": "/news"
             }
           ]
+        },
+        {
+          "id": 22,
+          "title": "侵权管理",
+          "icon": "el-icon-menu",
+          "children": [
+            {
+              "id": 221,
+              "rootId": 2,
+              "title": "产品侵权",
+              "path": "/producttort"
+            },
+            {
+              "id": 222,
+              "rootId": 2,
+              "title": "关键字侵权",
+              "path": "/KeywordTort"
+            }
+          ]
+        },
+        {
+          "id": 23,
+          "title": "供应商管理",
+          "icon": "el-icon-menu",
+          "path": "/supplier",
+          "children": [
+          ]
         }
       ]
     },
