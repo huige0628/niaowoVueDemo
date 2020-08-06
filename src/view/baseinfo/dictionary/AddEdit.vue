@@ -3,12 +3,12 @@
     :visible.sync="show"
     :close-on-click-modal="false"
     :title="title"
-    width="25%"
+    width="30%"
     top="10vh"
     scrollable
   >
     <div style="max-height:650px;overflow-x:auto">
-      <el-form ref="form" :model="formData" :rules="formRules" label-width="100px">
+      <el-form ref="form" :model="formData" :rules="formRules" label-width="80px">
         <el-form-item label="字典分类" prop="categoryId">
           <el-select v-model="formData.categoryId" placeholder="请选择字典分类" style="width:100%;">
             <el-option

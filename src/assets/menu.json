@@ -103,8 +103,8 @@
             {
               "id": 202,
               "rootId": 2,
-              "title": "新闻管理",
-              "path": "/news"
+              "title": "类目映射",
+              "path": "/categoryMapping"
             }
           ]
         },

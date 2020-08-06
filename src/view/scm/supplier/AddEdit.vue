@@ -4,10 +4,10 @@
     :close-on-click-modal="false"
     :title="title"
     width="50%"
-    top="10vh"
+    top="5vh"
     scrollable
   >
-    <div style="max-height:550px;overflow-x:auto">
+    <div style="max-height:460px;overflow-x:auto">
       <el-form
         :model="formData"
         :rules="formRules"

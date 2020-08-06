@@ -3,7 +3,7 @@
     :visible.sync="show"
     :close-on-click-modal="false"
     :title="title"
-    width="30%"
+    width="35%"
     top="10vh"
     scrollable
   >

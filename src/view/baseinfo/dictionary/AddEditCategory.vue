@@ -3,12 +3,12 @@
     :visible.sync="show"
     :close-on-click-modal="false"
     :title="title"
-    width="20%"
+    width="25%"
     top="10vh"
     scrollable
   >
     <div style="max-height:550px;overflow-x:auto" class="form-container">
-      <el-form ref="form" :model="formData" :rules="formRules" label-width="100px">
+      <el-form ref="form" :model="formData" :rules="formRules" label-width="80px">
         <el-form-item label="分类名称" prop="categoryName">
           <el-input v-model="formData.categoryName" placeholder="请输入分类名称" clearable />
         </el-form-item>

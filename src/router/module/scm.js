@@ -18,5 +18,10 @@ export default[
         path: '/keywordtort',
         name: 'KeywordTort',
         component: ()=>import("@/view/scm/tort/keywordtort/Index")
+    },
+    {
+        path: '/categoryMapping',
+        name: 'CategoryMapping',
+        component: ()=>import("@/view/scm/categorymapping/Index")
     }
 ]
